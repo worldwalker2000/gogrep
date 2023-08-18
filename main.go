@@ -32,7 +32,7 @@ func check(e error) {
     }
 }
 
-func grepFile(re *regexp.Regexp, name string, n bool, full bool) {
+func grepFile(re *regexp.Regexp, name string, n bool, r bool) {
     f, err := os.Open(name)
     check(err)
 
@@ -44,13 +44,17 @@ func grepFile(re *regexp.Regexp, name string, n bool, full bool) {
 
         if re.MatchString(line) {
             if n {
-                if full {
+                if r {
                     fmt.Printf("./%s:%d:%s\n", name, i, line)
                 } else {
                     fmt.Printf("%d:%s\n", i, line)
                 }
             } else {
-                fmt.Printf("%s\n", line)
+                if r {
+                    fmt.Printf("./%s:%s\n", name, line)
+                } else {
+                    fmt.Printf("%s\n", line)
+                }
             }
         }
 

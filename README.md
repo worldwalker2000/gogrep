@@ -18,4 +18,5 @@ This is not even close to a full grep as only the following kinds of commands wo
 gogrep "pattern" file
 gogrep -n "pattern" file
 gogrep -rn "pattern"
+gogrep -r "pattern"
 ```
