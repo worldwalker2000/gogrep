@@ -12,7 +12,7 @@ grep -rn "include" > /dev/null  0.34s user 0.03s system 99% cpu 0.373 total
 
 It is actually faster (.34s vs .10s).
 
-This is not even close to a full grep as only the folling kinds of commands work
+This is not even close to a full grep as only the following kinds of commands work
 
 ```shell
 gogrep "pattern" file
